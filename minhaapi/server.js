@@ -26,6 +26,11 @@ app.get('/', (req, res) => {
 
 })
 
-const animais = require('./animais');
-animais(app);
+//const animais = require('./animais');
+//animais(app);
+
+
+const colaborador = require('./colaborador');
+colaborador(app);
+
 
