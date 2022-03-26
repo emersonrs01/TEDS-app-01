@@ -1,0 +1,38 @@
+# Obter a lista de usuários
+GET http://localhost:3000/api/solicitante
+Content-Type: application/json
+###
+
+POST http://localhost:3000/api/solicitante
+Content-Type: application/json
+
+{
+ "nome": "Emerson",
+ "email": "emersonrs2@upf.br",
+ "senha": "senhateste"
+}
+###
+
+# Alterar usuário
+PUT http://localhost:3000/api/solicitante
+Content-Type: application/json
+
+{
+ "_id": "5f6cba8798eca62ccce84ba7",
+ "nome": "Jaqson alterado",
+ "email": "jaqson@teste.com",
+ "celular": "54 6543 2423"
+}
+###
+# Excluir um usuário
+DELETE http://localhost:3000/api/solicitante/5f5a96dd5e818fae8fc6e1db
+Content-Type: application/json
+###
+# Obter pelo id de usuário
+GET http://localhost:3000/api/solicitante/5f6cb80e07cee54810920f5f
+Content-Type: application/json
+###
+# Obter usuários filtrando
+GET http://localhost:3000/api/solicitante/filtro/fulano
+Content-Type: application/json
+###

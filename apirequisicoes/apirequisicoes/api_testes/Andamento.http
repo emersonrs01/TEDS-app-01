@@ -1,0 +1,40 @@
+# Obter a lista de usuários
+GET http://localhost:3000/api/andamento
+Content-Type: application/json
+###
+
+POST http://localhost:3000/api/andamento
+Content-Type: application/json
+
+{
+ "dataHora": "2022-03-25",
+ "titulo": "INICIO1",
+ "descricao": "INICIO",
+ "Colaborador": "62352589b556ef373e730067",
+ "Atividade": "623e5bb20c9e3e47e794e261"
+}
+###
+
+# Alterar usuário
+PUT http://localhost:3000/api/andamento
+Content-Type: application/json
+
+{
+ "_id": "5f6cba8798eca62ccce84ba7",
+ "nome": "Jaqson alterado",
+ "email": "jaqson@teste.com",
+ "celular": "54 6543 2423"
+}
+###
+# Excluir um usuário
+DELETE http://localhost:3000/api/andamento/5f5a96dd5e818fae8fc6e1db
+Content-Type: application/json
+###
+# Obter pelo id de usuário
+GET http://localhost:3000/api/andamento/5f6cb80e07cee54810920f5f
+Content-Type: application/json
+###
+# Obter usuários filtrando
+GET http://localhost:3000/api/andamento/filtro/fulano
+Content-Type: application/json
+###
