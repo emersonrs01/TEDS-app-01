@@ -1,5 +1,5 @@
 # Obter a lista de usuários
-GET http://localhost:3000/api/colaborador
+GET http://localhost:3001/api/colaborador
 Content-Type: application/json
 ###
 

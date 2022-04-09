@@ -26,24 +26,39 @@ function App() {
   }
   const salvar = () => {
     console.log('Salvar ...');
-    setEditando(false);
+    if (usuario.id == null){ // inclussão
+      usuario.id = usuarios.length + 1
+      setUsuarios([...usuarios, usuario])
+    } else { // alteração
+      setUsuarios(usuarios.map((find) => (find.id === usuario.id ? usuario : find)))
+    }
+    setEditando(false);     
   }
   const cancelar = () => {
     console.log('Cancelou ...');
     setEditando(false);
+  }
+
+  const editar = (id) => {
+    setUsuario(usuarios.filter((usuario) => usuario.id == id)[0]);
+    setEditando(true);
+  }
+  const excluir = (id) => {
+    setUsuarios(usuarios.filter((usuario) => usuario.id !== id));
   }
   const [usuarios, setUsuarios] = useState(usuariosList)
 
   if(!editando){
   return (
     <div className="App">
-      <UsuarioList usuarios={usuarios} onClickAtualizar={onClickAtualizar} inserir={inserir} />
+      <UsuarioList usuarios={usuarios} onClickAtualizar ={onClickAtualizar }
+      inserir={inserir} editar={editar} excluir={excluir} />
     </div>
   )
   }else{
     return (
       <div className="App">
-        <UsuarioForm usuario={usuario} setUsuario={setUsuario} salvar={salvar} cancelar={cancelar} />
+        <UsuarioForm usuario={usuario} setUsuario={setUsuario} salvar={salvar} cancelar={cancelar}  />
       </div>
     )
   }

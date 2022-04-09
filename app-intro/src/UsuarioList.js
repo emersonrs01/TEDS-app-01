@@ -15,8 +15,8 @@ const usuarioList = (props) => (
                     <tr key={index}>
                         <td>{index}</td> <td>{o.nome}</td> <td>{o.email}</td> <td>{o.celular}</td><td>{o.idade}</td>
                         <td>
-                            <button type="button" className="btn btn-primary btn-sm">Editar</button>
-                            <button type="button" className="btn btn-primary btn-sm">Excluir</button>
+                        <button onClick={() => props.editar(o.id)} className="btn btn-primary btn-sm">Editar</button>
+                        <button onClick={() => props.excluir(o.id)} className="btn btn-danger btn-sm">Excluir</button>
                         </td>         
                     </tr>
                 ))) : (
