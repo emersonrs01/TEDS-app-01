@@ -1,0 +1,38 @@
+# Obter a lista de usuários
+GET http://localhost:3001/api/atividade
+Content-Type: application/json
+###
+
+POST http://localhost:3001/api/atividade
+Content-Type: application/json
+
+{
+ "nome": "INICIO1",
+ "data": "2022-03-25",
+ "status": "CADASTRADO"
+}
+###
+
+# Alterar usuário
+PUT http://localhost:3001/api/atividade
+Content-Type: application/json
+
+{
+ "_id": "626335e06ef2a1b2b5fe2ba0",
+ "nome": "Almoco",
+ "data": "2022-04-23",
+ "status": "FINALIZADO"
+}
+###
+# Excluir um usuário
+DELETE http://localhost:3001/api/atividade/626335e06ef2a1b2b5fe2ba0
+Content-Type: application/json
+###
+# Obter pelo id de usuário
+GET http://localhost:3001/api/atividade/5f6cb80e07cee54810920f5f
+Content-Type: application/json
+###
+# Obter usuários filtrando
+GET http://localhost:3001/api/atividade/filtro/fulano
+Content-Type: application/json
+###
