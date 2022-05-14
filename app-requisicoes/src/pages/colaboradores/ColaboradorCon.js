@@ -136,6 +136,8 @@ function ColaboradorCon() {
         <ConfirmDialog />
         <ColaboradorList
           colaboradores={colaboradores}
+          colaborador={colaborador}
+          setColaborador={setColaborador}
           onClickAtualizar={onClickAtualizar}
           inserir={inserir}
           editar={editar}
