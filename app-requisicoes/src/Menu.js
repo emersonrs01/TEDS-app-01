@@ -14,6 +14,18 @@ function Menu() {
                 {
                     label: 'Usuários', icon: 'pi pi-fw pi-user',
                     command: () => { navigate("/usuario") }
+                },
+                {
+                    label: 'TiposReq', icon: 'pi pi-fw pi-user',
+                    command: () => { navigate("/tiporeq") }
+                },
+                {
+                    label: 'Solicitantes', icon: 'pi pi-fw pi-user',
+                    command: () => { navigate("/solicitante") }
+                },
+                {
+                    label: 'Andamento', icon: 'pi pi-fw pi-user',
+                    command: () => { navigate("/andamento") }
                 }
             ]
         },
