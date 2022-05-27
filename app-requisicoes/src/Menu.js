@@ -26,6 +26,14 @@ function Menu() {
                 {
                     label: 'Andamento', icon: 'pi pi-fw pi-user',
                     command: () => { navigate("/andamento") }
+                },
+                {
+                    label: 'Atividades', icon: 'pi pi-fw pi-user',
+                    command: () => { navigate("/atividade") }
+                },
+                {
+                    label: 'Requisicao', icon: 'pi pi-fw pi-user',
+                    command: () => { navigate("/requisicao") }
                 }
             ]
         },

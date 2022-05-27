@@ -2,7 +2,7 @@ import React from "react";
 const TipoReqForm = (props) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    props.setTipoReq({ ...props.TipoReq, [name]: value });
+    props.setTipoReq({ ...props.tipoReq, [name]: value });
   };
   return (
     <form>
@@ -11,8 +11,8 @@ const TipoReqForm = (props) => {
         <input
           class="form-control"
           type="text"
-          name="nome"
-          value={props.TipoReq.descricao}
+          name="descricao"
+          value={props.tipoReq.descricao}
           onChange={handleInputChange}
         />
       </div>

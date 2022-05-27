@@ -2,7 +2,7 @@ import React from "react";
 const SolicitanteForm = (props) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    props.setSolicitante({ ...props.Solicitante, [name]: value });
+    props.setSolicitante({ ...props.solicitante, [name]: value });
   };
   return (
     <form>
@@ -12,7 +12,7 @@ const SolicitanteForm = (props) => {
           class="form-control"
           type="text"
           name="nome"
-          value={props.Solicitante.nome}
+          value={props.solicitante.nome}
           onChange={handleInputChange}
         />
       </div>
@@ -22,7 +22,17 @@ const SolicitanteForm = (props) => {
           class="form-control"
           type="text"
           name="email"
-          value={props.Solicitante.email}
+          value={props.solicitante.email}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div class="form-group">
+        <label>senha</label>
+        <input
+          class="form-control"
+          type="password"
+          name="senha"
+          value={props.solicitante.senha}
           onChange={handleInputChange}
         />
       </div>

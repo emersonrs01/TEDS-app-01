@@ -45,7 +45,7 @@ const AndamentoList = (props) => {
         onSelectionChange={e => props.setAndamento(e.value)} dataKey="_id"
         >
         {/* <Column field="_id" header="Id" sortable ></Column> */}
-        <Column field="titulo" header="titulo" sortable filter ></Column>
+        <Column field="descricao" header="titulo" sortable filter ></Column>
         <Column body={OperacoesTemplate} header="Operações">
         </Column>
       </DataTable>

@@ -2,7 +2,7 @@ import React from "react";
 const AndamentoForm = (props) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    props.setAndamento({ ...props.Andamento, [name]: value });
+    props.setAndamento({ ...props.andamento, [name]: value });
   };
   return (
     <form>
@@ -11,8 +11,8 @@ const AndamentoForm = (props) => {
         <input
           class="form-control"
           type="text"
-          name="titulo"
-          value={props.Andamento.descricao}
+          name="descricao"
+          value={props.andamento.descricao}
           onChange={handleInputChange}
         />
       </div>
