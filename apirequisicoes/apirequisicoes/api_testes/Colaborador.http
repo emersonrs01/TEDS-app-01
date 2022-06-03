@@ -1,10 +1,26 @@
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjdlZTZjZDEwNDE4ZTk1Mjk5MWNhMDgiLCJub21lIjoiSmFxc29uIDIyRGFsYm9zY28iLCJpYXQiOjE2NTQyOTk0NTgsImV4cCI6MTY1NDMwMzA1OH0.LI9N8TTRuSap1M-GvCdbsTPIEz7L46ySzk8EtoEKcr4
+
 # Obter a lista de usuários
 GET http://localhost:3001/api/colaborador
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
+PUT http://localhost:3001/api/colaborador/alterarSenha
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "_id": "627ee6cd10418e952991ca08",
+ "nome": "Jaqson 22Dalbosco",
+ "email": "jaqso22n@upf.br",
+ "senha": "123"
+}
+
+###
 POST http://localhost:3000/api/colaborador
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
  "nome": "Emerson3",
@@ -14,11 +30,12 @@ Content-Type: application/json
 ###
 
 # Alterar usuário
-PUT http://localhost:3000/api/colaborador
+PUT http://localhost:3001/api/colaborador/alterarSenha
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
- "_id": "5f6cba8798eca62ccce84ba7",
+ "_id": "627ee81d10418e952991ca13",
  "nome": "Jaqson alterado",
  "email": "jaqson@teste.com",
  "celular": "54 6543 2423"
@@ -27,12 +44,25 @@ Content-Type: application/json
 # Excluir um usuário
 DELETE http://localhost:3000/api/colaborador/5f5a96dd5e818fae8fc6e1db
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 # Obter pelo id de usuário
 GET http://localhost:3000/api/colaborador/5f6cb80e07cee54810920f5f
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 # Obter usuários filtrando
 GET http://localhost:3000/api/colaborador/filtro/fulano
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
+@apiUrl = http://localhost:3001/api
+# Autenticação de usuário
+POST {{apiUrl}}/login
+x-auth-token: {{authToken}}
+Content-Type: application/json
+
+{
+ "email": "jaqso22n@upf.br",
+ "senha": "123"
+}
