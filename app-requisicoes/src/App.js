@@ -1,7 +1,8 @@
 import "./App.css";
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Menu from './Menu';
+import LoginForm from "./pages/login/LoginForm";
 const Home = lazy(() => import('./pages/home/Home'));
 const UsuarioCon = lazy(() => import('./pages/colaboradores/ColaboradorCon'));
 const TipoReq = lazy(() => import('./pages/tipoRequisicao/TipoReqCon'));
@@ -10,7 +11,17 @@ const Andamento = lazy(() => import('./pages/Andamento/AndamentoCon'));
 const Atividade = lazy(() => import('./pages/Atividade/AtividadeCon'));
 const Requisicao = lazy(() => import('./pages/Requisicao/RequisicaoCon'));
 function App() {
+  const [token, setToken] = useState([])
+  useEffect(() => {
+    setToken(sessionStorage.getItem('token'));
+  }, []);
+  if (!token || token <= '') {
+    return <LoginForm />
+  }
+
   return (
+    
+
     <BrowserRouter >
       <Menu />
       <Suspense fallback={<div>Carregando ... </div>}>

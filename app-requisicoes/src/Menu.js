@@ -38,7 +38,12 @@ function Menu() {
             ]
         },
         {
-            label: 'Sair', icon: 'pi pi-fw pi-power-off'
+            label: 'Sair', icon: 'pi pi-sign-out',
+            command: () => {
+                sessionStorage.setItem('token',
+                    '');
+            },
+            url: '/'
         }
     ];
     return (<Menubar model={items} />)
