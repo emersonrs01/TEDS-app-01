@@ -1,6 +1,10 @@
+@authToken =  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmI1MjM4YjQwYmIwZWIwZjkzYTUxMTgiLCJub21lIjoiSmFxc29uIDIyRGFsYm9zY28iLCJpYXQiOjE2NTYwMzg1MDEsImV4cCI6MTY1NjA0MjEwMX0.hliCm8i64i04pkbgH3g0-theJTLcSdltuWPDcFXKqqM
+###
 # Obter a lista de usuários
-GET http://localhost:3000/api/andamento
+
+GET http://localhost:3001/api/andamento
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 POST http://localhost:3000/api/andamento

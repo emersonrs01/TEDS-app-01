@@ -14,6 +14,7 @@ routes.route('/Colaborador').put(colaborador.alterar);
 routes.route('/Colaborador/:id').delete(colaborador.excluir);
 routes.route('/Colaborador/:id').get(colaborador.obterPeloId);
 routes.route('/Colaborador/filtro/:filtro').get(colaborador.filtrar);
+routes.route('/Colaborador/alterarSenha').put(colaborador.alterarSenha);
 
 routes.route('/solicitante').get(solicitante.listar);
 routes.route('/solicitante').post(solicitante.incluir);
